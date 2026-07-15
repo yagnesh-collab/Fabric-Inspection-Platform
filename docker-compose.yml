@@ -1,0 +1,109 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    container_name: rabbitmq
+    expose:
+      - "5672"
+    ports:
+      - "15672:15672"   # Management UI — accessible at http://localhost:15672
+    env_file: .env
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    # Port NOT exposed to host — only reachable inside Docker network
+    expose:
+      - "5432"
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  consumer:
+    build:
+      context: ./consumer
+    container_name: consumer
+    # NOT exposed to host — only reachable via nginx proxy
+    expose:
+      - "8000"
+    env_file: .env
+    environment:
+      RABBITMQ_URL: ${RABBITMQ_URL}
+      DATABASE_URL: ${DATABASE_URL}
+      API_KEY: ${API_KEY}
+      ALLOWED_ORIGIN: ${ALLOWED_ORIGIN}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  jetson-sim:
+    build:
+      context: ./jetson-sim
+    container_name: jetson-sim
+    # NOT exposed to host — only reachable via nginx proxy
+    expose:
+      - "8001"
+    env_file: .env
+    environment:
+      RABBITMQ_URL: ${RABBITMQ_URL}
+      FRAME_INTERVAL_MS: ${FRAME_INTERVAL_MS}
+      ANOMALY_THRESHOLD: ${ANOMALY_THRESHOLD}
+      DATASET_PATH: ${DATASET_PATH}
+      API_KEY: ${API_KEY}
+      ALLOWED_ORIGIN: ${ALLOWED_ORIGIN}
+    volumes:
+      - ./data/images:/data/images:ro
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: ./ui
+      args:
+        VITE_API_KEY: ${API_KEY}
+    container_name: ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - consumer
+      - jetson-sim
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: adminer
+    ports:
+      - "8080:8080"   # Database UI — accessible at http://localhost:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+      ADMINER_DESIGN: pepa-linha-dark
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

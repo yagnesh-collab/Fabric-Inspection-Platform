@@ -1,0 +1,198 @@
+.card {
+  background: #fff;
+  border: 1px solid #EEF0F4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.04);
+}
+
+/* === Header === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.iconBox {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #EFF6FF, #E0E7FF);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563EB;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0F172A;
+  letter-spacing: -0.01em;
+}
+
+.badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.badgeOk   { background: #DCFCE7; color: #166534; }
+.badgeErr  { background: #FEE2E2; color: #991B1B; }
+.badgeIdle { background: #F1F5F9; color: #64748B; }
+
+/* === Error banner === */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 18px;
+  padding: 10px 14px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  color: #B91C1C;
+  line-height: 1.4;
+}
+
+/* === Loading === */
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 18px;
+  font-size: 0.8rem;
+  color: #94A3B8;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #E2E8F0;
+  border-top-color: #2563EB;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* === Event type breakdown === */
+.eventTypes {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.emptyEvents {
+  font-size: 0.8rem;
+  color: #CBD5E1;
+  padding: 4px 0;
+}
+
+.eventTypeRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eventTypeHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eventTypeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.eventTypeName {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  text-transform: capitalize;
+}
+
+.eventTypeCount {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0F172A;
+  font-variant-numeric: tabular-nums;
+}
+
+.eventBar {
+  height: 4px;
+  background: #F1F5F9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.eventBarFill {
+  height: 100%;
+  border-radius: 999px;
+  opacity: 0.7;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* === Meta list === */
+.metaList {
+  padding: 6px 0;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  transition: background 0.1s;
+}
+
+.metaRow:hover { background: #FAFBFC; }
+
+.metaIcon {
+  width: 22px;
+  height: 22px;
+  background: #F8FAFC;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.metaLabel {
+  flex: 1;
+  font-size: 0.8rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.metaValue {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0F172A;
+  font-variant-numeric: tabular-nums;
+}
+
+.metaWarn { color: #D97706; }

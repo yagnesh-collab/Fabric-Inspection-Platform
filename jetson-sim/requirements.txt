@@ -1,0 +1,7 @@
+aio-pika==9.4.1
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+websockets==12.0
+Pillow==10.3.0
+pydantic-settings==2.3.0
+slowapi==0.1.9

@@ -1,0 +1,8 @@
+# 422 real fabric defect images are stored here, organised by class:
+#   burst/          105 images
+#   lycra_run/      107 images
+#   needle_break/   105 images
+#   oil_stain/      105 images
+#
+# Source: aaozgur/fabric-defect-dataset-v4 (HuggingFace, public)
+# Extracted from parquet with data/download_dataset.py

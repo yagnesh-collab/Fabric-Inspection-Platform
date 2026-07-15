@@ -1,0 +1,336 @@
+<svg viewBox="0 0 960 700" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c18"/>
+      <stop offset="100%" stop-color="#05080f"/>
+    </linearGradient>
+    <linearGradient id="hostGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1526"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </linearGradient>
+    <linearGradient id="networkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1a1c"/>
+      <stop offset="100%" stop-color="#081214"/>
+    </linearGradient>
+    <linearGradient id="uiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1040"/>
+      <stop offset="100%" stop-color="#120a2c"/>
+    </linearGradient>
+    <linearGradient id="jsimGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f2040"/>
+      <stop offset="100%" stop-color="#091530"/>
+    </linearGradient>
+    <linearGradient id="consGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e2818"/>
+      <stop offset="100%" stop-color="#081a10"/>
+    </linearGradient>
+    <linearGradient id="mqGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1030"/>
+      <stop offset="100%" stop-color="#1c0820"/>
+    </linearGradient>
+    <linearGradient id="pgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e1e40"/>
+      <stop offset="100%" stop-color="#081428"/>
+    </linearGradient>
+    <linearGradient id="admGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1010"/>
+      <stop offset="100%" stop-color="#1c0808"/>
+    </linearGradient>
+    <linearGradient id="volGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2a"/>
+      <stop offset="100%" stop-color="#10101e"/>
+    </linearGradient>
+    <linearGradient id="portGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a2a1a"/>
+      <stop offset="100%" stop-color="#101e10"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow-purple"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow-blue"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow-green"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow-orange"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow-red"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="cardShadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.6"/></filter>
+
+    <!-- Arrow markers -->
+    <marker id="arrBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#38bdf8"/></marker>
+    <marker id="arrGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#4ade80"/></marker>
+    <marker id="arrOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#fb923c"/></marker>
+    <marker id="arrPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#c084fc"/></marker>
+    <marker id="arrRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#f87171"/></marker>
+    <marker id="arrGray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="700" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="480" y="30" fill="#e2e8f0" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="2">NEXTEX — DOCKER ARCHITECTURE</text>
+
+  <!-- ═══════════════════════════════════════════════
+       HOST MACHINE outer boundary
+  ═══════════════════════════════════════════════ -->
+  <rect x="18" y="44" width="924" height="640" rx="14" fill="url(#hostGrad)" stroke="#1e3a5f" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="36" y="64" fill="#38bdf8" font-size="10" font-weight="700" letter-spacing="1" opacity="0.7">HOST MACHINE</text>
+
+  <!-- ═══ EXPOSED PORTS ROW ═══ -->
+  <text x="36" y="88" fill="#475569" font-size="9" font-weight="600" letter-spacing="1">EXPOSED TO BROWSER</text>
+
+  <!-- Port :3000 -->
+  <g filter="url(#cardShadow)">
+    <rect x="36" y="96" width="140" height="52" rx="10" fill="url(#portGrad)" stroke="#4ade80" stroke-width="1.5"/>
+  </g>
+  <rect x="36" y="96" width="140" height="4" rx="2" fill="#4ade80"/>
+  <text x="106" y="117" fill="#4ade80" font-size="18" font-weight="800" text-anchor="middle">:3000</text>
+  <text x="106" y="133" fill="#94a3b8" font-size="9" text-anchor="middle">Monitoring Dashboard</text>
+  <text x="106" y="145" fill="#64748b" font-size="8" text-anchor="middle">localhost:3000</text>
+
+  <!-- Port :15672 -->
+  <g filter="url(#cardShadow)">
+    <rect x="196" y="96" width="140" height="52" rx="10" fill="url(#portGrad)" stroke="#fb923c" stroke-width="1.5"/>
+  </g>
+  <rect x="196" y="96" width="140" height="4" rx="2" fill="#fb923c"/>
+  <text x="266" y="117" fill="#fb923c" font-size="18" font-weight="800" text-anchor="middle">:15672</text>
+  <text x="266" y="133" fill="#94a3b8" font-size="9" text-anchor="middle">RabbitMQ Mgmt UI</text>
+  <text x="266" y="145" fill="#64748b" font-size="8" text-anchor="middle">localhost:15672</text>
+
+  <!-- Port :8080 -->
+  <g filter="url(#cardShadow)">
+    <rect x="356" y="96" width="140" height="52" rx="10" fill="url(#portGrad)" stroke="#f87171" stroke-width="1.5"/>
+  </g>
+  <rect x="356" y="96" width="140" height="4" rx="2" fill="#f87171"/>
+  <text x="426" y="117" fill="#f87171" font-size="18" font-weight="800" text-anchor="middle">:8080</text>
+  <text x="426" y="133" fill="#94a3b8" font-size="9" text-anchor="middle">Adminer DB UI</text>
+  <text x="426" y="145" fill="#64748b" font-size="8" text-anchor="middle">localhost:8080</text>
+
+  <!-- ═══ DOCKER BRIDGE NETWORK ═══ -->
+  <rect x="36" y="168" width="888" height="494" rx="12" fill="url(#networkGrad)" stroke="#0e4a5a" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="54" y="186" fill="#38bdf8" font-size="9" font-weight="600" letter-spacing="1" opacity="0.6">DOCKER BRIDGE NETWORK  —  services resolve each other by container name</text>
+
+  <!-- ═══════════════════
+       CONTAINER: ui
+  ═══════════════════ -->
+  <g filter="url(#cardShadow)">
+    <rect x="56" y="196" width="200" height="182" rx="12" fill="url(#uiGrad)" stroke="#c084fc" stroke-width="1.5"/>
+  </g>
+  <rect x="56" y="196" width="200" height="4" rx="2" fill="#c084fc"/>
+  <!-- top badge -->
+  <rect x="176" y="204" width="68" height="16" rx="5" fill="#c084fc" fill-opacity="0.18"/>
+  <text x="210" y="215" fill="#c084fc" font-size="8" font-weight="700" text-anchor="middle">nginx:alpine</text>
+  <text x="156" y="220" fill="#e2e8f0" font-size="13" font-weight="800">ui</text>
+  <text x="156" y="234" fill="#94a3b8" font-size="9">Multi-stage Docker build</text>
+  <line x1="70" y1="242" x2="242" y2="242" stroke="#c084fc" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="70" y="258" fill="#64748b" font-size="8" font-weight="600">BUILD STAGE</text>
+  <text x="70" y="272" fill="#94a3b8" font-size="9">node:20-alpine → npm run build</text>
+  <text x="70" y="286" fill="#94a3b8" font-size="9">VITE_API_KEY injected at build</text>
+  <line x1="70" y1="294" x2="242" y2="294" stroke="#c084fc" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="70" y="308" fill="#64748b" font-size="8" font-weight="600">NGINX PROXY RULES</text>
+  <text x="70" y="322" fill="#94a3b8" font-size="9">/api/consumer/ → consumer:8000</text>
+  <text x="70" y="336" fill="#94a3b8" font-size="9">/api/jetson/ → jetson-sim:8001</text>
+  <text x="70" y="350" fill="#94a3b8" font-size="9">/ws/stream → WebSocket upgrade</text>
+  <text x="70" y="368" fill="#c084fc" font-size="9" font-weight="700">port 80  (internal) → host 3000</text>
+
+  <!-- ═══════════════════
+       CONTAINER: jetson-sim
+  ═══════════════════ -->
+  <g filter="url(#cardShadow)">
+    <rect x="290" y="196" width="200" height="182" rx="12" fill="url(#jsimGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+  </g>
+  <rect x="290" y="196" width="200" height="4" rx="2" fill="#38bdf8"/>
+  <rect x="416" y="204" width="62" height="16" rx="5" fill="#38bdf8" fill-opacity="0.18"/>
+  <text x="447" y="215" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">custom build</text>
+  <text x="304" y="220" fill="#e2e8f0" font-size="13" font-weight="800">jetson-sim</text>
+  <text x="304" y="234" fill="#94a3b8" font-size="9">python:3.12-slim</text>
+  <line x1="304" y1="242" x2="476" y2="242" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="304" y="258" fill="#64748b" font-size="8" font-weight="600">STACK</text>
+  <text x="304" y="272" fill="#94a3b8" font-size="9">FastAPI + uvicorn</text>
+  <text x="304" y="286" fill="#94a3b8" font-size="9">aio-pika  (AMQP publisher)</text>
+  <text x="304" y="300" fill="#94a3b8" font-size="9">Pillow  (image processing)</text>
+  <text x="304" y="314" fill="#94a3b8" font-size="9">slowapi  (rate limiting)</text>
+  <line x1="304" y1="322" x2="476" y2="322" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="304" y="336" fill="#64748b" font-size="8" font-weight="600">VOLUME MOUNT</text>
+  <text x="304" y="350" fill="#94a3b8" font-size="9">./data/images → /data/images</text>
+  <text x="304" y="362" fill="#64748b" font-size="8">read-only  (:ro)</text>
+  <text x="304" y="368" fill="#38bdf8" font-size="9" font-weight="700">port 8001  (internal only)</text>
+
+  <!-- ═══════════════════
+       CONTAINER: consumer
+  ═══════════════════ -->
+  <g filter="url(#cardShadow)">
+    <rect x="524" y="196" width="200" height="182" rx="12" fill="url(#consGrad)" stroke="#4ade80" stroke-width="1.5"/>
+  </g>
+  <rect x="524" y="196" width="200" height="4" rx="2" fill="#4ade80"/>
+  <rect x="648" y="204" width="62" height="16" rx="5" fill="#4ade80" fill-opacity="0.18"/>
+  <text x="679" y="215" fill="#4ade80" font-size="8" font-weight="700" text-anchor="middle">custom build</text>
+  <text x="538" y="220" fill="#e2e8f0" font-size="13" font-weight="800">consumer</text>
+  <text x="538" y="234" fill="#94a3b8" font-size="9">python:3.12-slim</text>
+  <line x1="538" y1="242" x2="710" y2="242" stroke="#4ade80" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="538" y="258" fill="#64748b" font-size="8" font-weight="600">STACK</text>
+  <text x="538" y="272" fill="#94a3b8" font-size="9">FastAPI + uvicorn</text>
+  <text x="538" y="286" fill="#94a3b8" font-size="9">aio-pika  (AMQP consumer)</text>
+  <text x="538" y="300" fill="#94a3b8" font-size="9">SQLAlchemy async + asyncpg</text>
+  <text x="538" y="314" fill="#94a3b8" font-size="9">slowapi  (rate limiting)</text>
+  <line x1="538" y1="322" x2="710" y2="322" stroke="#4ade80" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="538" y="336" fill="#64748b" font-size="8" font-weight="600">STARTUP ORDER</text>
+  <text x="538" y="350" fill="#94a3b8" font-size="9">waits: rabbitmq healthy</text>
+  <text x="538" y="362" fill="#94a3b8" font-size="9">waits: postgres healthy</text>
+  <text x="538" y="368" fill="#4ade80" font-size="9" font-weight="700">port 8000  (internal only)</text>
+
+  <!-- ═══════════════════
+       CONTAINER: rabbitmq
+  ═══════════════════ -->
+  <g filter="url(#cardShadow)">
+    <rect x="56" y="418" width="200" height="162" rx="12" fill="url(#mqGrad)" stroke="#fb923c" stroke-width="1.5"/>
+  </g>
+  <rect x="56" y="418" width="200" height="4" rx="2" fill="#fb923c"/>
+  <rect x="186" y="426" width="58" height="16" rx="5" fill="#fb923c" fill-opacity="0.18"/>
+  <text x="215" y="437" fill="#fb923c" font-size="8" font-weight="700" text-anchor="middle">official image</text>
+  <text x="70" y="445" fill="#e2e8f0" font-size="13" font-weight="800">rabbitmq</text>
+  <text x="70" y="459" fill="#94a3b8" font-size="9">rabbitmq:3.13-management-alpine</text>
+  <line x1="70" y1="466" x2="242" y2="466" stroke="#fb923c" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="70" y="482" fill="#94a3b8" font-size="9">queue: "events"  durable=True</text>
+  <text x="70" y="496" fill="#94a3b8" font-size="9">DeliveryMode.PERSISTENT</text>
+  <text x="70" y="510" fill="#94a3b8" font-size="9">prefetch_count = 10</text>
+  <text x="70" y="524" fill="#94a3b8" font-size="9">at-least-once delivery</text>
+  <line x1="70" y1="532" x2="242" y2="532" stroke="#fb923c" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="70" y="546" fill="#fb923c" font-size="9" font-weight="700">AMQP :5672  (internal)</text>
+  <text x="70" y="560" fill="#fb923c" font-size="9" font-weight="700">Mgmt UI :15672 → host</text>
+  <text x="70" y="572" fill="#64748b" font-size="8">healthcheck: rabbitmq-diagnostics ping</text>
+
+  <!-- ═══════════════════
+       CONTAINER: postgres
+  ═══════════════════ -->
+  <g filter="url(#cardShadow)">
+    <rect x="290" y="418" width="200" height="162" rx="12" fill="url(#pgGrad)" stroke="#60a5fa" stroke-width="1.5"/>
+  </g>
+  <rect x="290" y="418" width="200" height="4" rx="2" fill="#60a5fa"/>
+  <rect x="418" y="426" width="58" height="16" rx="5" fill="#60a5fa" fill-opacity="0.18"/>
+  <text x="447" y="437" fill="#60a5fa" font-size="8" font-weight="700" text-anchor="middle">official image</text>
+  <text x="304" y="445" fill="#e2e8f0" font-size="13" font-weight="800">postgres</text>
+  <text x="304" y="459" fill="#94a3b8" font-size="9">postgres:16-alpine</text>
+  <line x1="304" y1="466" x2="476" y2="466" stroke="#60a5fa" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="304" y="482" fill="#94a3b8" font-size="9">database: nextex</text>
+  <text x="304" y="496" fill="#94a3b8" font-size="9">table: events</text>
+  <text x="304" y="510" fill="#94a3b8" font-size="9">schema auto-created on startup</text>
+  <text x="304" y="524" fill="#94a3b8" font-size="9">SQLAlchemy ORM  (parameterised)</text>
+  <line x1="304" y1="532" x2="476" y2="532" stroke="#60a5fa" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="304" y="546" fill="#60a5fa" font-size="9" font-weight="700">:5432  (internal only)</text>
+  <text x="304" y="560" fill="#64748b" font-size="8">healthcheck: pg_isready</text>
+
+  <!-- ═══════════════════
+       CONTAINER: adminer
+  ═══════════════════ -->
+  <g filter="url(#cardShadow)">
+    <rect x="524" y="418" width="200" height="162" rx="12" fill="url(#admGrad)" stroke="#f87171" stroke-width="1.5"/>
+  </g>
+  <rect x="524" y="418" width="200" height="4" rx="2" fill="#f87171"/>
+  <rect x="652" y="426" width="58" height="16" rx="5" fill="#f87171" fill-opacity="0.18"/>
+  <text x="681" y="437" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">official image</text>
+  <text x="538" y="445" fill="#e2e8f0" font-size="13" font-weight="800">adminer</text>
+  <text x="538" y="459" fill="#94a3b8" font-size="9">adminer:4.8.1</text>
+  <line x1="538" y1="466" x2="710" y2="466" stroke="#f87171" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="538" y="482" fill="#94a3b8" font-size="9">browser-based DB client</text>
+  <text x="538" y="496" fill="#94a3b8" font-size="9">connects to postgres:5432</text>
+  <text x="538" y="510" fill="#94a3b8" font-size="9">theme: pepa-linha-dark</text>
+  <text x="538" y="524" fill="#94a3b8" font-size="9">default server: postgres</text>
+  <line x1="538" y1="532" x2="710" y2="532" stroke="#f87171" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="538" y="546" fill="#f87171" font-size="9" font-weight="700">:8080 → host</text>
+  <text x="538" y="560" fill="#64748b" font-size="8">waits: postgres healthy</text>
+
+  <!-- ═══════════════════
+       VOLUMES
+  ═══════════════════ -->
+  <g filter="url(#cardShadow)">
+    <rect x="762" y="196" width="148" height="86" rx="12" fill="url(#volGrad)" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,3"/>
+  </g>
+  <!-- cylinder icon -->
+  <ellipse cx="782" cy="214" rx="8" ry="4" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="774" y1="214" x2="774" y2="226" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="790" y1="214" x2="790" y2="226" stroke="#94a3b8" stroke-width="1.2"/>
+  <ellipse cx="782" cy="226" rx="8" ry="4" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="797" y="218" fill="#e2e8f0" font-size="11" font-weight="700">postgres_data</text>
+  <text x="797" y="230" fill="#64748b" font-size="8">named volume</text>
+  <text x="774" y="248" fill="#94a3b8" font-size="9">PostgreSQL data directory</text>
+  <text x="774" y="262" fill="#94a3b8" font-size="9">survives container restarts</text>
+  <text x="774" y="274" fill="#64748b" font-size="8">removed only with  -v  flag</text>
+
+  <!-- dataset mount -->
+  <g filter="url(#cardShadow)">
+    <rect x="762" y="300" width="148" height="80" rx="12" fill="url(#volGrad)" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,3"/>
+  </g>
+  <text x="776" y="320" fill="#e2e8f0" font-size="11" font-weight="700">data/images/</text>
+  <text x="776" y="334" fill="#64748b" font-size="8">host directory</text>
+  <text x="776" y="352" fill="#94a3b8" font-size="9">422 real fabric images</text>
+  <text x="776" y="366" fill="#94a3b8" font-size="9">mounted  :ro  (read-only)</text>
+  <text x="776" y="378" fill="#64748b" font-size="8">→ /data/images in container</text>
+
+  <!-- ═══════════════════
+       CONNECTIONS
+  ═══════════════════ -->
+
+  <!-- Port :3000 → ui container (vertical down) -->
+  <path d="M106,148 L106,192" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.7" marker-end="url(#arrGreen)"/>
+
+  <!-- Port :15672 → rabbitmq (diagonal) -->
+  <path d="M266,148 C266,165 156,175 156,414" fill="none" stroke="#fb923c" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#arrOrange)"/>
+
+  <!-- Port :8080 → adminer (diagonal) -->
+  <path d="M426,148 C426,165 624,175 624,414" fill="none" stroke="#f87171" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#arrRed)"/>
+
+  <!-- ui → jetson-sim (proxy /api/jetson/ and /ws/stream) -->
+  <path d="M256,302 L286,302" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrBlue)"/>
+  <rect x="257" y="290" width="28" height="11" rx="3" fill="#001a2d" fill-opacity="0.9"/>
+  <text x="271" y="299" fill="#38bdf8" font-size="7" text-anchor="middle">proxy</text>
+
+  <!-- ui → consumer (proxy /api/consumer/) -->
+  <path d="M256,330 C268,330 278,310 286,295" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrGreen)"/>
+  <rect x="257" y="320" width="28" height="11" rx="3" fill="#001a0d" fill-opacity="0.9"/>
+  <text x="271" y="329" fill="#4ade80" font-size="7" text-anchor="middle">proxy</text>
+
+  <!-- jetson-sim → rabbitmq (AMQP publish) -->
+  <path d="M390,378 L390,404 C390,410 156,410 156,414" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-opacity="0.8" marker-end="url(#arrOrange)"/>
+  <rect x="250" y="400" width="104" height="13" rx="4" fill="#1a0800" fill-opacity="0.9"/>
+  <text x="302" y="410" fill="#fb923c" font-size="8" font-weight="700" text-anchor="middle">AMQP publish  (persistent)</text>
+
+  <!-- rabbitmq → consumer (AMQP consume) -->
+  <path d="M256,520 C272,520 510,520 520,520" fill="none" stroke="#4ade80" stroke-width="1.8" stroke-opacity="0.8" marker-end="url(#arrGreen)"/>
+  <rect x="318" y="510" width="116" height="13" rx="4" fill="#001a0d" fill-opacity="0.9"/>
+  <text x="376" y="520" fill="#4ade80" font-size="8" font-weight="700" text-anchor="middle">AMQP consume  (ack)</text>
+
+  <!-- consumer → postgres (asyncpg) -->
+  <path d="M624,378 L624,404 C624,410 490,410 490,414" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-opacity="0.8" marker-end="url(#arrBlue)"/>
+  <rect x="518" y="400" width="108" height="13" rx="4" fill="#00102d" fill-opacity="0.9"/>
+  <text x="572" y="410" fill="#60a5fa" font-size="8" font-weight="700" text-anchor="middle">asyncpg  INSERT events</text>
+
+  <!-- adminer → postgres -->
+  <path d="M624,520 L494,520" fill="none" stroke="#f87171" stroke-width="1.5" stroke-opacity="0.6" marker-end="url(#arrRed)"/>
+  <rect x="524" y="510" width="56" height="13" rx="4" fill="#1a0808" fill-opacity="0.9"/>
+  <text x="552" y="520" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">SQL query</text>
+
+  <!-- postgres → volume (named volume) -->
+  <path d="M724,500 C740,500 756,490 758,280" fill="none" stroke="#475569" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4,3" marker-end="url(#arrGray)"/>
+  <rect x="730" y="486" width="42" height="13" rx="4" fill="#0d0d1a" fill-opacity="0.9"/>
+  <text x="751" y="496" fill="#64748b" font-size="8" text-anchor="middle">:ro vol</text>
+
+  <!-- jetson-sim → dataset volume -->
+  <path d="M490,300 C540,300 660,300 758,340" fill="none" stroke="#475569" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4,3" marker-end="url(#arrGray)"/>
+
+  <!-- ═══ STARTUP ORDER legend ═══ -->
+  <rect x="762" y="418" width="148" height="162" rx="12" fill="#0a0f1a" fill-opacity="0.7" stroke="#1e293b" stroke-width="1"/>
+  <text x="776" y="436" fill="#64748b" font-size="8" font-weight="700" letter-spacing="1">STARTUP ORDER</text>
+  <text x="776" y="454" fill="#94a3b8" font-size="9">1. rabbitmq</text>
+  <text x="776" y="469" fill="#94a3b8" font-size="9">2. postgres</text>
+  <text x="776" y="484" fill="#94a3b8" font-size="9">3. consumer</text>
+  <text x="800" y="484" fill="#64748b" font-size="8">  (waits 1+2)</text>
+  <text x="776" y="499" fill="#94a3b8" font-size="9">4. jetson-sim</text>
+  <text x="800" y="499" fill="#64748b" font-size="8">  (waits 1)</text>
+  <text x="776" y="514" fill="#94a3b8" font-size="9">5. ui</text>
+  <text x="800" y="514" fill="#64748b" font-size="8">        (waits 3+4)</text>
+  <text x="776" y="529" fill="#94a3b8" font-size="9">6. adminer</text>
+  <text x="800" y="529" fill="#64748b" font-size="8">   (waits 2)</text>
+  <line x1="776" y1="537" x2="896" y2="537" stroke="#1e293b" stroke-width="0.8"/>
+  <text x="776" y="552" fill="#64748b" font-size="8">all:  restart: unless-stopped</text>
+  <text x="776" y="566" fill="#64748b" font-size="8">healthchecks drive ordering</text>
+</svg>
